@@ -181,23 +181,25 @@ exports.deleteUser = async (req, res, next) => {
                 .catch((error) => {
                     return res.status(404).json({ error })
                 })
-            }
-
-            Remark.destroy({where: {userId: userId}})
-            .then(() => {
-                
-                Post.destroy({where: {userId: userId }})
+            } else {
+                Remark.destroy({where: {userId: userId}})
                     .then(() => {
-                        User.destroy({where: {id: userId}})
-                        return res.status(200).json({message:'Compte supprimez avec succes'})
+                        
+                        Post.destroy({where: {userId: userId }})
+                            .then(() => {
+                                User.destroy({where: {id: userId}})
+                                return res.status(200).json({message:'Compte supprimez avec succes'})
+                            })
+                            .catch((error) => {
+                                return res.status(404).json({ error })
+                            })
                     })
                     .catch((error) => {
                         return res.status(404).json({ error })
                     })
-            })
-            .catch((error) => {
-                return res.status(404).json({ error })
-            })
+            }
+
+            
 
         } else if (searchUser.isAdmin === true) {
             Remark.destroy({where: {userId: userId}})
