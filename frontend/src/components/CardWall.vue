@@ -389,7 +389,7 @@ export default {
 
 .img-post {
   object-fit: contain;
-  width: auto;
+  width: 100%;
   height: 350px;
 }
 
@@ -470,6 +470,44 @@ export default {
 
         .img-post {
           width: 100%;
+        }
+
+        .content-comments {
+          padding: 0;
+          margin: 0;
+          margin-bottom: 25px;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .alert-delete-post {
+          margin-right: 100px;
+        }
+
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .card {
+      width: 80%;
+
+        .img-post {
+          width: 100%;
+        }
+
+        .content-comments {
+          padding: 0;
+          margin: 0;
+          margin-bottom: 25px;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .alert-delete-post {
+          top: 100px;
+          right: 100px;
         }
     }
 }

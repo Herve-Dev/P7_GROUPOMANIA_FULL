@@ -113,23 +113,23 @@ export default {
   }
 }
 
-@media only screen and (max-width: 320px) {
-        .content-nav {
-            justify-content: center;
+@media only screen and (min-width: 320px) and (max-width: 484px) {
+    .content-nav {
+        justify-content: center;
 
-              .container-nav-logo {
-                display: none;
-              }
+          .container-nav-logo {
+            display: none;
+          }
 
-            .info-user {
-              margin-right: 10px;
-              margin-left: 5px;
-            }
-
-            .home-responsive {
-              display: flex;
-            }
+        .info-user {
+          margin-right: 10px;
+          margin-left: 5px;
         }
+
+        .home-responsive {
+          display: flex;
+        }
+    }
 
         
 }

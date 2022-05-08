@@ -33,13 +33,11 @@ exports.signup = async (req, res, next) => {
     const usernameFound = await User.findOne({ where: {username: username}} )
 
     if (emailFound) {
-        console.log(emailFound);
         return res.status(404).json({'error': 'Email déja existant'})
     }
 
     if (usernameFound) {
         const alternativeUsernameForUser = genUsername.generateUsername(username, 2) // module pour proposer un autre username à l'utilisateur
-        console.log(alternativeUsernameForUser);
         return res.status(404).json({'error': 'Username déja existant voici un Username alternatif ,'+ ' ' + alternativeUsernameForUser})    
     }
 
@@ -77,7 +75,6 @@ exports.avatarAndBiography = async (req, res, next) => {
         searchUser.attachment = attachment
         searchUser.biography = biography
         await searchUser.save()
-        console.log(searchUser);
         return res.status(201).json({ message: 'votre profil a été mis à jour ' })
         
     }

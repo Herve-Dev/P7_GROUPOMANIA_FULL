@@ -81,9 +81,10 @@ export default {
 
 <style lang="scss">
     .form-avatar-biography {
-        width: 550px;
+        width: 100%;
         box-shadow: 5px 5px 16px 6px rgba(0,0,0,0.2);
         background-color: white;
+        border-radius: 15px;
 
             h2 {
                 padding: 10px;
@@ -102,7 +103,7 @@ export default {
 
     @media only screen and (max-width: 320px) {
         .form-avatar-biography {
-            width: 90%;
+            width: 80%;
             border-radius: 10px;
         }
     }

@@ -25,11 +25,9 @@ exports.createPost = async (req, res, next) => {
         const userPost = await Post.create({UserId: userIdToken, title: title, content: content, attachment: attachment, likes: 0})
 
         if (userPost) {
-            console.log(title, content, attachment);
             res.status(200).json({message :'Nouveau post ajouté'})
         }
     } catch (error) {
-        console.log(title, content, attachment);
         return res.status(500).json({error})
     }
    
@@ -95,7 +93,6 @@ exports.deletePost = async (req, res, next) => {
             }
             
             if(userIdPost.userId == userIdToken) {
-                console.log('condition utilisateur');
 
                 Remark.destroy({where: {postId: postId}})
                     .then(() => {

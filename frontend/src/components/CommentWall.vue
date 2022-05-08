@@ -38,8 +38,8 @@
     </section>
             
     <section v-if="menuComment" class="container-delete-update-comments">
-        <it-button @click="deleteComment" :data-id-delete-remark="commentId" icon='delete'/>
-        <it-button @click="targetDataAndModalUpdate " :data-comment-bind="remarkComment" :data-id-update-remark="commentId" icon='edit'/>
+        <it-button @click="deleteComment" :data-id-delete-remark="commentId" icon="delete"/>
+        <it-button @click="targetDataAndModalUpdate" :data-comment-bind="remarkComment" :data-id-update-remark="commentId" icon='edit'/>
     </section>
    
 </template>
@@ -196,5 +196,27 @@ export default {
         position: absolute;
         right: 200px;
     }
+
+
+    @media only screen and (max-width: 320px) {
+
+        .container-user-comment {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 600px) {
+
+        .container-user-comment {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+
 
 </style>
